@@ -1,24 +1,32 @@
+import java.util.Scanner;
+
 public class MaxAndMinValueArray {
     public static void main(String[] args) {
 
-        int[] Arr = {15,12,788,1,-1,-778,2,0};
+        int[] Arr = {15, 12, 788, 1, -1, -778, 2, 0};
+        int number;
 
-        int minClosest = Arr[0];
-        int maxClosest = Arr[0];
+        System.out.println("Enter the number : ");
+        Scanner input = new Scanner(System.in);
+        number = input.nextInt();
 
-        for(int i : Arr){
+        int minClosest = Integer.MIN_VALUE;
+        int maxClosest = Integer.MAX_VALUE;
 
-            if(i<minClosest){
+        for (int i : Arr) {
+            if (i < number && i > minClosest) {
                 minClosest = i;
             }
-
-            if(i>maxClosest){
+            if (i > number && i < maxClosest) {
                 maxClosest = i;
             }
+        }
+
+
+
+        System.out.println("Girilen Sayıya En Yakın Minimum Değer :" + minClosest);
+        System.out.println("Girilen Sayıya En Yakın Maximum Değer :" + maxClosest);
 
         }
-        System.out.println("Minimum Değer :" + minClosest);
-        System.out.println("Maximum Değer :" + maxClosest);
-
     }
-}
+
